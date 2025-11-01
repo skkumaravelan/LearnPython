@@ -1,0 +1,9 @@
+@echo off
+cd /d C:\Users\kkbbx\PycharmProjects\AmhLogAnalyser
+echo.
+echo ******************** Activating Environment
+call C:\DEV\.conda\envs\my_env64\Scripts\activate
+echo ******************** Running Main Script
+python main.py
+echo ******************** Done
+pause
