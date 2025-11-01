@@ -12,21 +12,28 @@ load_dotenv()
 
 if __name__ == "__main__":
     input_dir = os.getenv("INPUT_DIR", r"S:\LearnPython\inputs")
-    middle_process_dir = os.getenv("MIDDLE_PROCESS_DIR", r"S:\LearnPython\middle-processes")
-    output_dir = os.getenv("OUTPUT_DIR", r"S:\LearnPython\output")
+    middle_process_dir = os.getenv("MIDDLE_PROCESS_DIR", r"S:\LearnPython\middle-process")
+    output_dir = os.getenv("OUTPUT_DIR", r"S:\LearnPython\outputs")
 
-    # Create directories if not exist
+    print("\n" + "*" * 20 + "\n")
+
+    # Create folders if they don't exist
     for folder in [input_dir, middle_process_dir, output_dir]:
-        if not os.path.exists(folder):
-            os.makedirs(folder)
-            print(f"Created folder: {folder}")
+        os.makedirs(folder, exist_ok=True)
+        print(f"Ensured folder exists: {folder}")
 
-    # Proceed with your existing pipeline:
+    print("\n" + "*" * 20 + "\n")
+
+
+    # First split
     for filename in os.listdir(input_dir):
         if filename.endswith(".txt"):
             input_path = os.path.join(input_dir, filename)
             firstSplitWith_ApplicationLogger_str_DynamicFileName(input_path, middle_process_dir)
 
+    print("\n" + "*" * 20 + "\n")
+
+    # Second split
     for filename in os.listdir(middle_process_dir):
         if filename.startswith("first_split_") and filename.endswith(".txt"):
             input_path = os.path.join(middle_process_dir, filename)
@@ -35,5 +42,8 @@ if __name__ == "__main__":
             output_path = os.path.join(middle_process_dir, output_filename)
             secondSplitWith_eventcodeAMH_str_DynamicFileName(input_path, output_path)
 
+    print("\n" + "*" * 20 + "\n")
+
+    # Write all to one Excel
     output_excel_path = os.path.join(output_dir, "all_logs.xlsx")
     write_all_dictionary_txts_to_single_excel(middle_process_dir, output_excel_path)
