@@ -1,0 +1,87 @@
+Microsoft Windows [Version 10.0.26100.6584]
+(c) Microsoft Corporation. All rights reserved.
+
+S:\LearnPython>git init
+Initialized empty Git repository in S:/LearnPython/.git/
+
+S:\LearnPython>git remote -v
+
+S:\LearnPython>git remote set-url origin https://github.com/skkumaravelan/LearnPython.git
+error: No such remote 'origin'
+
+S:\LearnPython>git remote add origin https://github.com/skkumaravelan/LearnPython.git
+
+S:\LearnPython>git remote -v
+origin  https://github.com/skkumaravelan/LearnPython.git (fetch)
+origin  https://github.com/skkumaravelan/LearnPython.git (push)
+
+S:\LearnPython>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .idea/
+        __pycache__/
+        log_output.xlsx
+        log_splitter_logics_modular.py
+        main.py
+        notes.txt
+        read_and_split.py
+        txt_files_inventory/
+        write_to_excel.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+S:\LearnPython>git add .
+warning: in the working copy of '.idea/inspectionProfiles/profiles_settings.xml', LF will be replaced by CRLF the next time Git touches it
+
+S:\LearnPython>git commit -m "Initial commit"
+[master (root-commit) afcadae] Initial commit
+ 16 files changed, 266 insertions(+)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/LearnPython.iml
+ create mode 100644 .idea/inspectionProfiles/profiles_settings.xml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 __pycache__/log_splitter_logics_modular.cpython-313.pyc
+ create mode 100644 __pycache__/write_to_excel.cpython-313.pyc
+ create mode 100644 log_output.xlsx
+ create mode 100644 log_splitter_logics_modular.py
+ create mode 100644 main.py
+ create mode 100644 notes.txt
+ create mode 100644 read_and_split.py
+ create mode 100644 txt_files_inventory/dictionary.txt
+ create mode 100644 txt_files_inventory/input.txt
+ create mode 100644 txt_files_inventory/output.txt
+ create mode 100644 write_to_excel.py
+
+S:\LearnPython>git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/skkumaravelan/LearnPython.git'
+
+S:\LearnPython>git branch
+* master
+
+S:\LearnPython>git branch -M main
+
+S:\LearnPython>git push -u origin main
+Username for 'https://github.com': skkumaravelan
+Password for 'https://skkumaravelan@github.com':
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (22/22), 13.61 KiB | 1.24 MiB/s, done.
+Total 22 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/skkumaravelan/LearnPython.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+S:\LearnPython>history
+'history' is not recognized as an internal or external command,
+operable program or batch file.
+
+S:\LearnPython>
