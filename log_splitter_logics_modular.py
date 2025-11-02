@@ -7,9 +7,9 @@ def get_date_part_from_filename(filename):
     # Remove 'amh_application-' if present
     base_name = base_name.replace("amh_application-", "")
     # If still more prefix, strip all before first number (for generalization)
-    match = re.search(r'(\d{4}-\d{2}-\d{2}-\d+)$', base_name)
+    match = re.search(r'(\d{4}-\d{2}-\d{2})(?:-\d+)?$', base_name)
     if match:
-        return match.group(1)
+        return match.group(1)  # Returns only '2025-10-20'
     else:
         return base_name
 
