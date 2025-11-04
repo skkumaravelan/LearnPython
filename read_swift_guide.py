@@ -2,9 +2,9 @@ from bs4 import BeautifulSoup
 from openpyxl import Workbook
 
 def extract_log_details_to_excel(html_file_path, log_code_txt_path, output_excel_path):
-    # 1. Read log codes from txt
+    # Read log codes from txt and clean brackets
     with open(log_code_txt_path, "r", encoding="utf-8") as f:
-        event_codes = [line.strip() for line in f if line.strip()]
+        event_codes = [line.strip().replace("[", "").replace("]", "") for line in f if line.strip()]
 
     # 2. Parse the HTML just once into a dict for fast lookup
     with open(html_file_path, "r", encoding="utf-8") as f:
