@@ -51,8 +51,7 @@ def write_all_dictionary_txts_to_single_excel(middle_process_dir, output_excel_p
 
                     row = {
                         "LogDate": logdate_val,
-                        "Matching_Scenario": "",
-                        "Event_Code": event_code,
+                        "AMH_Event_Log_Code": event_code,
                         "Status": status,
                         "Event_Details": content
                     }

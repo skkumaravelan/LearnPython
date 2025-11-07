@@ -47,3 +47,68 @@ if __name__ == "__main__":
     # Write all to one Excel
     output_excel_path = os.path.join(output_dir, "all_logs.xlsx")
     write_all_dictionary_txts_to_single_excel(middle_process_dir, output_excel_path)
+
+
+#----------------------------------------------------------------
+# Extract unique EventCodes and write to Sheet2 of the same file
+
+from unique_excel_logic import extract_unique_eventcodes
+unique_eventcodes, _ = extract_unique_eventcodes(output_excel_path, True)
+
+
+#----------------------------------------------------------------
+# Read Official SWIFT Guide and get Log Details and Write to Sheet3
+
+from read_swift_guide import read_swift_guide_and_write_to_excel
+from sheet_merger import  create_merged_sheet4
+
+# Path to your HTML guide file (update as per your actual path)
+html_guide_path = r"S:\LearnPython\inputs\AMHApplicationLogGuide.html"
+
+# Call the method to read codes from Sheet2 of all_logs.xlsx and write details to Sheet3
+read_swift_guide_and_write_to_excel(html_guide_path, output_excel_path)
+
+# Create Sheet4 by merging Sheet2 and Sheet3
+create_merged_sheet4(output_excel_path)
+
+#----------------------------------------------------------------
+from excel_formatting import format_all_headers, auto_resize_all_columns, enable_autofilter_all_sheets, format_content_font_all_sheets, set_max_column_width, freeze_top_row_all_sheets, wrap_text_all_headers
+
+# ===== FORMATTING STEPS (apply to ALL sheets including Sheet4) =====
+
+# Formatting step 1: Format headers (bold, yellow, Calibri 12)
+format_all_headers(output_excel_path)
+
+# Formatting step 1.5: Enable wrap text for all headers
+wrap_text_all_headers(output_excel_path)
+
+# Formatting step 2: Format content rows (Calibri 10)
+format_content_font_all_sheets(output_excel_path, font_size=10)
+
+# Formatting step 3: Auto-resize columns to fit content
+auto_resize_all_columns(output_excel_path)
+
+# Formatting step 3.5: Limit Event_Details column width (if exists in any sheet)
+set_max_column_width(output_excel_path, column_name='Event_Details', max_width=50)
+
+# Formatting step 4: Enable AutoFilter dropdowns on headers
+enable_autofilter_all_sheets(output_excel_path)
+
+# Formatting step 5: Freeze top row for easy scrolling
+freeze_top_row_all_sheets(output_excel_path)
+
+
+print(f"\n{'*' * 20}\n")
+print(f"✓ All processing complete!")
+print(f"✓ Excel file ready: {output_excel_path}")
+print(f"  - Sheet1: All logs")
+print(f"  - Sheet2: Unique EventCodes")
+print(f"  - Sheet3: Log Code Details (Message & Description)")
+print(f"  - Sheet4: Merged Event Codes with Status and Details. Also, hints texts given for user inputs.")
+print(f"  - Headers: Bold, Yellow, Calibri 12, Wrap Text Enabled")
+print(f"  - Content: Calibri 10")
+print(f"  - Columns: Auto-resized for readability")
+print(f"  - Event_Details column: Limited to max width 50")
+print(f"  - AutoFilter: Enabled for easy filtering")
+print(f"  - Top row: Frozen for easy vertical scrolling")
+#----------------------------------------------------------------
