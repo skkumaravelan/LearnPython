@@ -60,8 +60,9 @@ def write_all_dictionary_txts_to_single_excel(middle_process_dir, output_excel_p
     df = pd.DataFrame(all_rows)
 
     # Remove trailing '-N' from LogDate and convert to pandas date type (datetime64[ns])
-    df['LogDate'] = df['LogDate'].str.extract(r'(\d{4}-\d{2}-\d{2})')
-    df['LogDate'] = pd.to_datetime(df['LogDate'], format='%Y-%m-%d') # TRUE date type for SNOW/Excel
+    # COMMENTED OUT: Not needed for production without SNOW dashboarding
+    # df['LogDate'] = df['LogDate'].str.extract(r'(\d{4}-\d{2}-\d{2})')
+    # df['LogDate'] = pd.to_datetime(df['LogDate'], format='%Y-%m-%d') # TRUE date type for SNOW/Excel
 
     # Export to Excel (Excel will keep LogDate as a date value with time omitted visually)
     df.to_excel(output_excel_path, index=False)

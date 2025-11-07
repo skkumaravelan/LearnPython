@@ -1,4 +1,5 @@
 import sys
+import os
 import time
 from datetime import datetime
 
@@ -19,6 +20,11 @@ class ConsoleLogger:
     def start(self):
         """Start capturing console output and begin timing."""
         self.start_time = time.time()
+        # ===== FIX: Ensure the directory exists before opening the file =====
+        log_dir = os.path.dirname(self.log_file_path)
+        if log_dir and not os.path.exists(log_dir):
+            os.makedirs(log_dir, exist_ok=True)
+
         self.log_file = open(self.log_file_path, 'w', encoding='utf-8')
         sys.stdout = self
 
