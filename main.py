@@ -6,6 +6,8 @@ from log_splitter_logics_modular import (
     secondSplitWith_eventcodeAMH_str_DynamicFileName
 )
 from write_to_excel import write_all_dictionary_txts_to_single_excel
+from console_logger import enable_console_logging  # ← ADD THIS IMPORT
+
 
 # Load from .env file
 load_dotenv()
@@ -14,6 +16,9 @@ if __name__ == "__main__":
     input_dir = os.getenv("INPUT_DIR", r"S:\LearnPython\inputs")
     middle_process_dir = os.getenv("MIDDLE_PROCESS_DIR", r"S:\LearnPython\middle-process")
     output_dir = os.getenv("OUTPUT_DIR", r"S:\LearnPython\outputs")
+
+    # ===== ENABLE CONSOLE LOGGING (comment out to disable) =====
+    logger = enable_console_logging(output_dir)  # ← ADD THIS LINE
 
     print("\n" + "*" * 20 + "\n")
 
@@ -70,11 +75,15 @@ read_swift_guide_and_write_to_excel(html_guide_path, output_excel_path)
 
 # Create Sheet4 by merging Sheet2 and Sheet3
 create_merged_sheet4(output_excel_path)
-
 #----------------------------------------------------------------
-from excel_formatting import format_all_headers, auto_resize_all_columns, enable_autofilter_all_sheets, format_content_font_all_sheets, set_max_column_width, freeze_top_row_all_sheets, wrap_text_all_headers
+from excel_formatting import (
+    format_all_headers, auto_resize_all_columns, enable_autofilter_all_sheets,
+    format_content_font_all_sheets, set_max_column_width, freeze_top_row_all_sheets,
+    wrap_text_all_headers, rename_sheets
+)
 
 # ===== FORMATTING STEPS (apply to ALL sheets including Sheet4) =====
+print(f"\nApplying formatting to: {output_excel_path}\n")
 
 # Formatting step 1: Format headers (bold, yellow, Calibri 12)
 format_all_headers(output_excel_path)
@@ -97,18 +106,43 @@ enable_autofilter_all_sheets(output_excel_path)
 # Formatting step 5: Freeze top row for easy scrolling
 freeze_top_row_all_sheets(output_excel_path)
 
+# Formatting step 6: Rename sheets to meaningful names
+sheet_names = {
+    'Sheet1': 'All_Logs',
+    'Sheet2': 'Unique_EventCodes',
+    'Sheet3': 'Log_Details_From_SWIFT',
+    'Sheet4': 'Merged_Summary'
+}
+rename_sheets(output_excel_path, sheet_names)
 
 print(f"\n{'*' * 20}\n")
 print(f"✓ All processing complete!")
-print(f"✓ Excel file ready: {output_excel_path}")
-print(f"  - Sheet1: All logs")
-print(f"  - Sheet2: Unique EventCodes")
-print(f"  - Sheet3: Log Code Details (Message & Description)")
-print(f"  - Sheet4: Merged Event Codes with Status and Details. Also, hints texts given for user inputs.")
-print(f"  - Headers: Bold, Yellow, Calibri 12, Wrap Text Enabled")
-print(f"  - Content: Calibri 10")
-print(f"  - Columns: Auto-resized for readability")
-print(f"  - Event_Details column: Limited to max width 50")
-print(f"  - AutoFilter: Enabled for easy filtering")
-print(f"  - Top row: Frozen for easy vertical scrolling")
-#----------------------------------------------------------------
+print(f"✓ Excel file ready: {output_excel_path}\n")
+print(f"  📊 Sheets:")
+print(f"     • All_Logs: All log entries")
+print(f"     • Unique_EventCodes: Unique event codes extracted")
+print(f"     • Log_Details_From_SWIFT: Log messages and descriptions from official guide")
+print(f"     • Merged_Summary: Event codes with status, priority fields, and details\n")
+print(f"  🎨 Formatting:")
+print(f"     • Headers: Bold, Yellow, Calibri 12, Wrap Text Enabled")
+print(f"     • Content: Calibri 10")
+print(f"     • Columns: Auto-resized for readability")
+print(f"     • Event_Details column: Limited to max width 50")
+print(f"     • AutoFilter: Enabled for easy filtering")
+print(f"     • Top row: Frozen for easy vertical scrolling")
+#--------------------------------------------------------------------------------
+
+# ===== STOP CONSOLE LOGGING AND GET RUNTIME =====
+runtime = logger.stop()  # Returns runtime in seconds
+
+# Format and display runtime
+if runtime < 60:
+    runtime_display = f"{runtime:.2f} seconds"
+else:
+    minutes = int(runtime // 60)
+    seconds = runtime % 60
+    runtime_display = f"{minutes} min {seconds:.2f} sec"
+
+print(f"\n⏱️  Total runtime: {runtime_display}")
+print(f"✓ Console output saved to: {os.path.join(output_dir, 'console_output.txt')}")
+# ----------------------------------------------------------------

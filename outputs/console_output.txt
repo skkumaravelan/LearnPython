@@ -1,0 +1,80 @@
+Console Output Log - Started at 2025-11-07 09:43:06
+============================================================
+
+Console Output Log - Started at 2025-11-07 09:43:06
+============================================================
+
+********************
+
+Ensured folder exists: S:\LearnPython\inputs
+Ensured folder exists: S:\LearnPython\outputs\middle-process
+Ensured folder exists: S:\LearnPython\outputs
+
+********************
+
+Extraction complete. 15 entries written to S:\LearnPython\outputs\middle-process\first_split_2025-10-20.txt
+Extraction complete. 5 entries written to S:\LearnPython\outputs\middle-process\first_split_2025-10-21.txt
+Extraction complete. 25 entries written to S:\LearnPython\outputs\middle-process\first_split_2025-10-22.txt
+Extraction complete. 40 entries written to S:\LearnPython\outputs\middle-process\first_split_2025-10-23.txt
+Extraction complete. 46 entries written to S:\LearnPython\outputs\middle-process\first_split_2025-10-24.txt
+Extraction complete. 76 entries written to S:\LearnPython\outputs\middle-process\first_split_2025-10-25.txt
+Extraction complete. 107 entries written to S:\LearnPython\outputs\middle-process\first_split_2025-10-26.txt
+
+********************
+
+Extraction complete. 15 lines written to S:\LearnPython\outputs\middle-process\dictionaryFormat_2025-10-20.txt
+Extraction complete. 5 lines written to S:\LearnPython\outputs\middle-process\dictionaryFormat_2025-10-21.txt
+Extraction complete. 25 lines written to S:\LearnPython\outputs\middle-process\dictionaryFormat_2025-10-22.txt
+Extraction complete. 40 lines written to S:\LearnPython\outputs\middle-process\dictionaryFormat_2025-10-23.txt
+Extraction complete. 46 lines written to S:\LearnPython\outputs\middle-process\dictionaryFormat_2025-10-24.txt
+Extraction complete. 76 lines written to S:\LearnPython\outputs\middle-process\dictionaryFormat_2025-10-25.txt
+Extraction complete. 107 lines written to S:\LearnPython\outputs\middle-process\dictionaryFormat_2025-10-26.txt
+
+********************
+
+Combined Excel file 'S:\LearnPython\outputs\all_logs.xlsx' created with 314 records.
+Unique EventCodes written to Sheet2 of: S:\LearnPython\outputs\all_logs.xlsx
+Unique EventCodes count: 6
+Wrote 6 Log Code details to Sheet3 of S:\LearnPython\outputs\all_logs.xlsx
+✓ Sheet4 created by merging Sheet2 and Sheet3: S:\LearnPython\outputs\all_logs.xlsx
+  Total merged rows: 6
+  Columns: AMH_Event_Log_Code, Status, Priority, Impact, Urgency, Threshold, Log Message, Description
+
+Applying formatting to: S:\LearnPython\outputs\all_logs.xlsx
+
+  ✓ Headers formatted (bold, yellow, Calibri 12)
+  ✓ Wrap text enabled for headers
+  ✓ Content font set to Calibri 10
+  ✓ Columns auto-resized
+  ✓ Column 'Event_Details' width limited to 50
+  ✓ AutoFilter enabled
+  ✓ Top row frozen
+  ✓ Renamed 'Sheet1' → 'All_Logs'
+  ✓ Renamed 'Sheet2' → 'Unique_EventCodes'
+  ✓ Renamed 'Sheet3' → 'Log_Details_From_SWIFT'
+  ✓ Renamed 'Sheet4' → 'Merged_Summary'
+  ✓ Sheet names updated
+
+********************
+
+✓ All processing complete!
+✓ Excel file ready: S:\LearnPython\outputs\all_logs.xlsx
+
+  📊 Sheets:
+     • All_Logs: All log entries
+     • Unique_EventCodes: Unique event codes extracted
+     • Log_Details_From_SWIFT: Log messages and descriptions from official guide
+     • Merged_Summary: Event codes with status, priority fields, and details
+
+  🎨 Formatting:
+     • Headers: Bold, Yellow, Calibri 12, Wrap Text Enabled
+     • Content: Calibri 10
+     • Columns: Auto-resized for readability
+     • Event_Details column: Limited to max width 50
+     • AutoFilter: Enabled for easy filtering
+     • Top row: Frozen for easy vertical scrolling
+
+============================================================
+Log completed at 2025-11-07 09:43:08
+Total runtime: 1.65 seconds
+============================================================
