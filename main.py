@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
     print("\n" + "*" * 20 + "\n")
 
-    # Write all to one Excel
+    # Write all to one Excel (Sheet1)
     output_excel_path = os.path.join(output_dir, "all_logs.xlsx")
     write_all_dictionary_txts_to_single_excel(middle_process_dir, output_excel_path)
 

@@ -1,7 +1,7 @@
-Console Output Log - Started at 2025-11-07 11:31:18
+Console Output Log - Started at 2025-11-07 11:50:11
 ============================================================
 
-Console Output Log - Started at 2025-11-07 11:31:18
+Console Output Log - Started at 2025-11-07 11:50:11
 ============================================================
 
 ********************
@@ -40,7 +40,7 @@ Unique EventCodes count: 6
   Sample codes: ['AMH-ADDRBOOK-00019', 'AMH-ADDRBOOK-00020', 'AMH-ADDRBOOK-00021']
 Wrote 6 Log Code details to Sheet3 of S:\LearnPython\outputs\all_logs.xlsx
 ✓ Sheet4 created by merging Sheet2 and Sheet3: S:\LearnPython\outputs\all_logs.xlsx
-  Total merged rows: 1
+  Total merged rows: 6
   Columns: AMH_Event_Log_Code, Status, Priority, Impact, Urgency, Threshold, Log Message, Description
 
 Applying formatting to: S:\LearnPython\outputs\all_logs.xlsx
@@ -78,6 +78,6 @@ Applying formatting to: S:\LearnPython\outputs\all_logs.xlsx
      • Top row: Frozen for easy vertical scrolling
 
 ============================================================
-Log completed at 2025-11-07 11:31:20
-Total runtime: 1.95 seconds
+Log completed at 2025-11-07 11:50:13
+Total runtime: 1.89 seconds
 ============================================================
