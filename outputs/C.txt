@@ -1,0 +1,9 @@
+Looking for 'AMH-USERACTION-00027'
+Output: 2025-10-28 00:00:00,124 [G MB0749]utxo::6fffa087251b::6541ef3e:68f9bb9:208b4d0[chnl:ApplicationLogger] INFO  eventcode.AMH  - service-2025-10-28T00:00:00.000Z [AMH-USERACTION-00027] The System Job 'Zenabup-completed-workflow' was executed by user service
+
+Looking for 'AMH-USERACTION-00020'
+Output: Not found in the log files
+
+Looking for 'AMH-SWF-00501'
+Output: 2025-10-28 00:00:31,461 [G MB0751]utxo::6fffa087251b::6541ef3e:68f9bb9:208bbf5[chnl:ApplicationLogger] ERROR eventcode.AMH  [AMH-SWF-00501] SnF session lost for SnF Queue rbosgb21_finplussrp1ll!pip:0923047, SAG Connection:SA_SAG3_LNI
+
