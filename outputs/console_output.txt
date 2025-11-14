@@ -1,7 +1,7 @@
-Console Output Log - Started at 2025-11-07 11:50:11
+Console Output Log - Started at 2025-11-14 08:11:01
 ============================================================
 
-Console Output Log - Started at 2025-11-07 11:50:11
+Console Output Log - Started at 2025-11-14 08:11:01
 ============================================================
 
 ********************
@@ -39,9 +39,7 @@ Unique EventCodes count: 6
 ✓ Parsed 923 codes from HTML file
   Sample codes: ['AMH-ADDRBOOK-00019', 'AMH-ADDRBOOK-00020', 'AMH-ADDRBOOK-00021']
 Wrote 6 Log Code details to Sheet3 of S:\LearnPython\outputs\all_logs.xlsx
-✓ Sheet4 created by merging Sheet2 and Sheet3: S:\LearnPython\outputs\all_logs.xlsx
-  Total merged rows: 6
-  Columns: AMH_Event_Log_Code, Status, Priority, Impact, Urgency, Threshold, Log Message, Description
+Final candidate list written to Sheet4! This is your Splunk-ready sheet.
 
 Applying formatting to: S:\LearnPython\outputs\all_logs.xlsx
 
@@ -55,7 +53,7 @@ Applying formatting to: S:\LearnPython\outputs\all_logs.xlsx
   ✓ Renamed 'Sheet1' → 'All_Logs'
   ✓ Renamed 'Sheet2' → 'Unique_EventCodes'
   ✓ Renamed 'Sheet3' → 'Log_Details_From_SWIFT'
-  ✓ Renamed 'Sheet4' → 'Merged_Summary'
+  ✓ Renamed 'Sheet4' → 'Potential_Splunk_NewAlerts'
   ✓ Sheet names updated
 
 ********************
@@ -78,6 +76,6 @@ Applying formatting to: S:\LearnPython\outputs\all_logs.xlsx
      • Top row: Frozen for easy vertical scrolling
 
 ============================================================
-Log completed at 2025-11-07 11:50:13
-Total runtime: 1.89 seconds
+Log completed at 2025-11-14 08:11:03
+Total runtime: 1.74 seconds
 ============================================================

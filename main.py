@@ -73,8 +73,19 @@ html_guide_path = r"S:\LearnPython\inputs\AMHApplicationLogGuide.html"
 # Call the method to read codes from Sheet2 of all_logs.xlsx and write details to Sheet3
 read_swift_guide_and_write_to_excel(html_guide_path, output_excel_path)
 
-# Create Sheet4 by merging Sheet2 and Sheet3
-create_merged_sheet4(output_excel_path)
+# # Create Sheet4 by merging Sheet2 and Sheet3
+# create_merged_sheet4(output_excel_path)
+#
+# from find_new_alert_candidates import append_new_alerts_as_sheet5
+#
+# currently_configured_splunklogs_path = r"S:\LearnPython\outputs\Already_configured_logcodes_in_amh.txt"
+# existing_excel_path = r"S:\LearnPython\outputs\all_logs.xlsx"
+#
+# # Find new potential alerts and save to a new file or new sheet if modified
+# append_new_alerts_as_sheet5(existing_excel_path, currently_configured_splunklogs_path)
+
+from SplunkCandidates import create_splunk_candidates_sheet
+create_splunk_candidates_sheet(r"S:\LearnPython\outputs\all_logs.xlsx", r"S:\LearnPython\outputs\Already_configured_logcodes_in_amh.txt")
 #----------------------------------------------------------------
 from excel_formatting import (
     format_all_headers, auto_resize_all_columns, enable_autofilter_all_sheets,
@@ -111,7 +122,7 @@ sheet_names = {
     'Sheet1': 'All_Logs',
     'Sheet2': 'Unique_EventCodes',
     'Sheet3': 'Log_Details_From_SWIFT',
-    'Sheet4': 'Merged_Summary'
+    'Sheet4': 'Potential_Splunk_NewAlerts'
 }
 rename_sheets(output_excel_path, sheet_names)
 
