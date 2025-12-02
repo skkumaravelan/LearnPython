@@ -1,7 +1,7 @@
-Console Output Log - Started at 2025-11-14 08:11:01
+Console Output Log - Started at 2025-12-02 10:50:16
 ============================================================
 
-Console Output Log - Started at 2025-11-14 08:11:01
+Console Output Log - Started at 2025-12-02 10:50:16
 ============================================================
 
 ********************
@@ -76,6 +76,6 @@ Applying formatting to: S:\LearnPython\outputs\all_logs.xlsx
      • Top row: Frozen for easy vertical scrolling
 
 ============================================================
-Log completed at 2025-11-14 08:11:03
-Total runtime: 1.74 seconds
+Log completed at 2025-12-02 10:50:18
+Total runtime: 2.38 seconds
 ============================================================

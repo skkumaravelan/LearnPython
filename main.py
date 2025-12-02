@@ -65,7 +65,6 @@ unique_eventcodes, _ = extract_unique_eventcodes(output_excel_path, True)
 # Read Official SWIFT Guide and get Log Details and Write to Sheet3
 
 from read_swift_guide import read_swift_guide_and_write_to_excel
-from sheet_merger import  create_merged_sheet4
 
 # Path to your HTML guide file (update as per your actual path)
 html_guide_path = r"S:\LearnPython\inputs\AMHApplicationLogGuide.html"
